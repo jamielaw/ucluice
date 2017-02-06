@@ -1,5 +1,11 @@
 # UCLUIce
-This is the code repository for UCLU Ice Club's website, including style files and source code. Deployed via GoDaddy hosting service via website admins only (Jamie: jamie.law.14@ucl.ac.uk, Shwe: shwe.ei.14@ucl.ac.uk) at link: https://pro.godaddy.com/clients/171695 (go to Manage link next to Economy Linux Hosting with cPanel)
+This is the code repository for UCLU Ice Club's website, including style files and source code. 
+
+## Deployment details
+1. Deployed via GoDaddy hosting service via website admins only (see contact details below) at link: https://pro.godaddy.com/clients/171695 (go to Manage link next to Economy Linux Hosting with cPanel)
+2. Once in cPanel, go to File Manager (under Files)
+3. Select "Document root for: ucluiceclub.co.uk" option, then continue.
+4. Replace files as necessary (recommended to overwrite all html files and images accordingly)
 
 ## Folder and file description
 ### Main pages
@@ -22,3 +28,6 @@ Contains image resource files. Files within this folder (and not the subfolders)
 * Gallery subfolder contains images used for gallery page.
 * Roster subfolder contains images used for roster page.
 
+## Contact
+* Jamie: jamie.law.14@ucl.ac.uk
+* Shwe: shwe.ei.14@ucl.ac.uk
