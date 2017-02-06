@@ -1,5 +1,5 @@
 # UCLUIce
-This is the code repository for UCLU Ice Club's website, including style files and source code
+This is the code repository for UCLU Ice Club's website, including style files and source code. Deployed via GoDaddy hosting service via website admins only (Jamie: jamie.law.14@ucl.ac.uk, Shwe: shwe.ei.14@ucl.ac.uk)
 
 ## Folder and file description
 ### Main pages
