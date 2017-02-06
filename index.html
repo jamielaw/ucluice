@@ -112,21 +112,48 @@
 </html>
 
 <script>
+	numberofimages = 13; //change this if we add more images
+	backoverlay = new Image();
+	backoverlay.src = "images/purple.png"; //purple overlay for images
+	var imgArray = new Array();
+	function preloader() { //preload the images so we don't have to keep dynamically loading them (resource intensive)
+		if (document.images) {
+			for(i = 0; i < numberofimages; i++){
+				imgArray[i] = new Image();
+				imgArray[i].src = "images/banner/ucl" + (i+1) + ".jpg";
+				//window.alert(imgArray[x].src);
+			}
+		}
+	}
+	function addLoadEvent(func) {
+		var oldonload = window.onload;
+		if (typeof window.onload != 'function') {
+			window.onload = func;
+		} else {
+			window.onload = function() {
+				if (oldonload) {
+					oldonload();
+				}
+				func();
+			}
+		}
+	}
+	addLoadEvent(preloader); //only load images after main page has finished loading
+
 	//Change image every 3 seconds, uses 2 images for background image as one is a purple overlay
 	function changeImage()
 	{
-		var img = document.getElementById("banner").style.backgroundImage = "url(" + images[x] + "), url(" + images[x+1] + ")";
+		document.getElementById("banner").style.backgroundImage = "url(" + backoverlay.src + ")," + "url(" + imgArray[x].src + ")";
 		document.getElementById("banner").style.WebkitBackfaceVisibility = "hidden";
 		document.getElementById("banner").style.WebkitTransitionTimingFunction = "ease-in-out";
-	    x+=2;
-	    if(x >= images.length){
+	    x+=1;
+	    if(x >= numberofimages){
 	        x = 0;
 	    }
 
 	    setTimeout("changeImage()", 3000);
 	}
 
-	var images = ["images/purple.png", "images/banner/ucl1.jpg", "images/purple.png", "images/banner/ucl2.jpg", "images/purple.png", "images/banner/ucl3.jpg", "images/purple.png", "images/banner/ucl4.jpg", "images/purple.png", "images/banner/ucl5.jpg", "images/purple.png", "images/banner/ucl6.jpg", "images/purple.png", "images/banner/ucl7.jpg", "images/purple.png", "images/banner/ucl8.jpg", "images/purple.png", "images/banner/ucl9.jpg", "images/purple.png", "images/banner/ucl10.jpg", "images/purple.png", "images/banner/ucl11.jpg", "images/purple.png", "images/banner/ucl12.jpg", "images/purple.png", "images/banner/ucl13.jpg"];
 	x = 0;
 
 	setTimeout("changeImage()", 3000);
