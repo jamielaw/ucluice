@@ -141,7 +141,7 @@
 	}
 	addLoadEvent(preloader); //only load images after main page has finished loading
 
-	//Change image every 3 seconds, uses 2 images for background image as one is a purple overlay
+	//Change image every 7 seconds, uses 2 images for background image as one is a purple overlay
 	function changeImage()
 	{
 		document.getElementById("banner").style.backgroundImage = "url(" + backoverlay.src + ")," + "url(" + imgArray[x].src + ")";
@@ -152,10 +152,10 @@
 	        x = 0;
 	    }
 
-	    setTimeout("changeImage()", 3000);
+	    setTimeout("changeImage()", 7000);
 	}
 
 	x = 0;
 
-	setTimeout("changeImage()", 3000);
+	setTimeout("changeImage()", 7000);
 </script>
