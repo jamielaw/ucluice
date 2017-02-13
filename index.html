@@ -37,7 +37,7 @@
 			</header>
 
 		<!-- Banner -->
-			<div id="banner" style="background-image: url('images/purple.png'), url('images/uclyetis.jpg')">
+			<div id="banner" style="background-image: url('images/purple.png'), url('images/uclyetis.jpg'), transform: translateZ(0)">
 				<img src="images/iconclub.png"><h2>Welcome to UCLU's Ice Club Website</h2><img src="images/logoyetis.png">
 				<p>We are a society at University College London focusing on Ice Hockey and Figure Skating</p>
 			</div>
@@ -141,21 +141,22 @@
 	}
 	addLoadEvent(preloader); //only load images after main page has finished loading
 
-	//Change image every 7 seconds, uses 2 images for background image as one is a purple overlay
+	//Change image every 5 seconds, uses 2 images for background image as one is a purple overlay
 	function changeImage()
 	{
 		document.getElementById("banner").style.backgroundImage = "url(" + backoverlay.src + ")," + "url(" + imgArray[x].src + ")";
 		document.getElementById("banner").style.WebkitBackfaceVisibility = "hidden";
+		//document.getElementById("banner").style.transform = "translateZ(0)";
 		document.getElementById("banner").style.WebkitTransitionTimingFunction = "ease-in-out";
 	    x+=1;
 	    if(x >= numberofimages){
 	        x = 0;
 	    }
 
-	    setTimeout("changeImage()", 7000);
+	    setTimeout("changeImage()", 5000);
 	}
 
 	x = 0;
 
-	setTimeout("changeImage()", 7000);
+	setTimeout("changeImage()", 5000);
 </script>
